@@ -19,6 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Shortcode for blockquote [wt_blockquote]
  */
 function wt_blockquoteFunction( $atts, $content = null ) {
-    return '<pre>'.$content.'</pre>';
+    return '<blockquote class="wt_content__blockquote"><p>'.$content.'</p></blockquote>';
 }
 add_shortcode( "wt_blockquote", "wt_blockquoteFunction" );

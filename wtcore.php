@@ -5,7 +5,6 @@
  * Description: A plugin for writable theme.
  * Author: WPTie
  * Author URI: http://wptie.com/
- * Text Domain: WT
  * Version: 1.0.0
  * License: GPL v2+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
