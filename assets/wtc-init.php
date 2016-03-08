@@ -12,6 +12,24 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
+ * Titan Framework Embedder.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( WTC_DIR . '/assets/admin/titan-framework/framework/titan-framework-embedder.php' ) ) {
+    require_once( WTC_DIR . '/assets/admin/titan-framework/framework/titan-framework-embedder.php' );
+}
+
+/**
+ * Framework admin initializer.
+ *
+ * @since 1.0.0
+ */
+if ( file_exists( WTC_DIR . '/assets/admin/admin-init.php' ) ) {
+    require_once( WTC_DIR . '/assets/admin/admin-init.php' );
+}
+
+/**
  * Shortcodes initializer.
  *
  * @since 1.0.0
