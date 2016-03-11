@@ -14,11 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * wt_fullWidth
+ * wt_extendImage
  *
- * Shortcode for full width content [wt_fullWidth]
+ * Shortcode for full width content [wt_extendImage]
  */
 function wt_content_fullWidth( $atts, $content = null ) {
     return '<div class="wt_content__img_fullWidth">'.$content.'</div>';
 }
-add_shortcode( "wt_fullWidth", "wt_content_fullWidth" );
+add_shortcode( "wt_extendImage", "wt_content_fullWidth" );

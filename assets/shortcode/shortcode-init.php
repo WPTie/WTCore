@@ -27,6 +27,6 @@ if ( file_exists( WTC_DIR . '/assets/shortcode/shortcode-blockquote.php' ) ) {
  *
  * @since 1.0.0
  */
-if ( file_exists( WTC_DIR . '/assets/shortcode/shortcode-fullimage.php' ) ) {
-    require_once( WTC_DIR . '/assets/shortcode/shortcode-fullimage.php' );
+if ( file_exists( WTC_DIR . '/assets/shortcode/shortcode-extendimage.php' ) ) {
+    require_once( WTC_DIR . '/assets/shortcode/shortcode-extendimage.php' );
 }
