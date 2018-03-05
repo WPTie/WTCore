@@ -16,6 +16,7 @@ class TitanFrameworkOption {
 	public $settings;
 	public $type; // One of the TYPE_* constants above
 	public $owner;
+	public $echo_wrapper = true;
 
 	private static $rowIndex = 0;
 
@@ -84,7 +85,21 @@ class TitanFrameworkOption {
 		 */
 		'hidden' => false,
 
+		/**
+		 * (Optional) The transport parameter in the Customizer is automatically set. Use this to override the transport value. Value can be blank, 'refresh' or 'postMessage'
+		 * @since 1.9.3
+		 * @var string
+		 */
+		'transport' => '',
+
 		'example' => '', // An example value for this field, will be displayed in a <code>
+
+		/**
+		 * (Optional) Sanitization callback function
+		 * @since 1.9.4
+		 * @var string
+		 */
+		'sanitize_callback' => '',
 	);
 
 	/**
@@ -262,6 +277,14 @@ class TitanFrameworkOption {
 	}
 
 	protected function echoOptionHeader( $showDesc = false ) {
+
+		if ( ! $this->echo_wrapper ) {
+			if ( $this->getHidden() ) {
+				echo '<div style="display: none;">';
+			}
+			return;
+		}
+
 		// Allow overriding for custom styling
 		$useCustom = false;
 		$useCustom = apply_filters( 'tf_use_custom_option_header', $useCustom );
@@ -295,6 +318,14 @@ class TitanFrameworkOption {
 	}
 
 	protected function echoOptionHeaderBare() {
+
+		if ( ! $this->echo_wrapper ) {
+			if ( $this->getHidden() ) {
+				echo '<div style="display: none;">';
+			}
+			return;
+		}
+
 		// Allow overriding for custom styling
 		$useCustom = false;
 		$useCustom = apply_filters( 'tf_use_custom_option_header', $useCustom );
@@ -318,6 +349,14 @@ class TitanFrameworkOption {
 	}
 
 	protected function echoOptionFooter( $showDesc = true ) {
+
+		if ( ! $this->echo_wrapper ) {
+			if ( $this->getHidden() ) {
+				echo '</div>';
+			}
+			return;
+		}
+
 		// Allow overriding for custom styling
 		$useCustom = false;
 		$useCustom = apply_filters( 'tf_use_custom_option_footer', $useCustom );
@@ -349,6 +388,14 @@ class TitanFrameworkOption {
 	}
 
 	protected function echoOptionFooterBare( $showDesc = true ) {
+
+		if ( ! $this->echo_wrapper ) {
+			if ( $this->getHidden() ) {
+				echo '</div>';
+			}
+			return;
+		}
+
 		// Allow overriding for custom styling
 		$useCustom = false;
 		$useCustom = apply_filters( 'tf_use_custom_option_footer', $useCustom );
